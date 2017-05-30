@@ -1,15 +1,17 @@
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Menu</ion-title>
+      <ion-title color="primary">tik-tik</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
+      <button menuClose ion-item (click)="projectsPage()">Projects</button>
+      <button menuClose ion-item (click)="newProjectPage()">New Project</button>
+      <button menuClose ion-item (click)="summaryPage()">Summary</button>
+      <button menuClose ion-item (click)="accountPage()">Account</button>      
+      <button menuClose ion-item (click)="settingsPage()">Settings</button>
     </ion-list>
   </ion-content>
 
