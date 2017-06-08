@@ -28,6 +28,8 @@ export class BillablePage {
   ];
 
   taskDetailPage($event,task){
-    this.navCtrl.push(TaskDetailPage,task);
+//    this.navCtrl.push(TaskDetailPage,task);
+//      this.navCtrl.popToRoot();
+      this.navCtrl.parent.parent.push(TaskDetailPage,task);
   }
 }
