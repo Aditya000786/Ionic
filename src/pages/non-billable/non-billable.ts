@@ -29,6 +29,7 @@ export class NonBillablePage {
   ];
 
   taskDetailPage($event,task){
-    this.navCtrl.push(TaskDetailPage,task);
+//    this.navCtrl.push(TaskDetailPage,task);
+        this.navCtrl.parent.parent.push(TaskDetailPage,task);
   }
 }

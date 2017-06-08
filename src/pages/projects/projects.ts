@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {ViewProjectPage} from '../pages';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 /**
  * Generated class for the ProjectsPage page.
@@ -15,7 +16,7 @@ import {ViewProjectPage} from '../pages';
 })
 export class ProjectsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public sharingVar:SocialSharing) {
   }
 
   ionViewDidLoad() {
@@ -30,5 +31,15 @@ export class ProjectsPage {
   viewProject($event,project){
     this.navCtrl.push(ViewProjectPage,project);
   }
+
+ whatsappShare(){
+  this.sharingVar.shareViaWhatsApp("Message via Whatsapp", null,"http://pointdeveloper.com/")
+  .then(()=>{
+    alert("Sucess");
+  },
+  ()=>{
+    alert("failed");
+  })
+}
 
 }
